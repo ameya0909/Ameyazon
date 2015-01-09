@@ -1,0 +1,23 @@
+<div ng-app="ameyazon" ng-controller="Items">
+	<h2 class="capitalize"><center>{{products[0].Brand}}  {{products[0].Model}}</center></h2>
+	<div class="container-fluid">
+		<br><center><img ng-src={{products[0].image}} width="300px" height="300px"></center><br>
+		<div class="row">
+			<div ng-repeat="product in products">
+				<div ng-repeat-start="(k, v) in product" ng-if="k!='_id' && k!='image'&& k!='startDate'&& k!='endDate'">
+					<div><center style="padding-top:10px;">{{k}} - {{v}}</center></div>
+				</div>
+				<div ng-repeat-end ng-if="($index + 1) % 2 == 0"></div>
+				<div class="col-md-12">
+					<center>
+						<div class="btn-group" role="group" aria-label="..." >
+							<div ng-if="show == true">
+				                <center style="padding-top:20px; padding-bottom:20px;"><a href ={{url}} class="btn btn-default">Buy Now</a></center>
+				            </div>
+		                 </div>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

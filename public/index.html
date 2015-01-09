@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+	<title>AMEYAZON</title>
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
+	<script src="js/controllers/Main.js"></script>
+	<script src="js/controllers/Categories.js"></script>
+	<script src="js/controllers/Items.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body ng-app="ameyazon" ng-controller="Main">
+			<div class="col-md-2">
+			<a href="/store" class="btn btn-info " style="padding-left: 35px; padding-right: 45px;">Home</a>
+		    </div>
+		
+	<div class="container-fluid">
+		
+			<div class="row">
+				<div class="page-header" style="padding-left: 695px; ">
+					<h1>AMEYAZON</h1>
+				</div>
+				<div class="col-md-2">
+					<h2><span class="label label-danger btn-large" style="padding-left: 35px; padding-right: 45px;">Products</span></h2>
+					<div ng-repeat="product in products">
+						<div class="" ><a  href="/store/{{product.url}}">{{product.name}}</a></div>
+					</div>
+				</div>
+
+				<div class="col-md-10">
+					<div ng-view></div>
+				</div>
+			</div>
+		
+	</div>
+
+	
+</body>
+</html>
